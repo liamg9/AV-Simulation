@@ -1,0 +1,36 @@
+# ==========================
+# C++ / CMake / Build Artifacts
+# ==========================
+build/
+cmake-build*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.log
+
+# ==========================
+# Python / FastAPI
+# ==========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.venv/
+
+# ==========================
+# OS / Editor Trash
+# ==========================
+.DS_Store
+Thumbs.db
+.vscode/
+*.code-workspace
