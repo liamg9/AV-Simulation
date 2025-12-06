@@ -43,6 +43,18 @@ make -j
 ### Execute
 ```./sim_runner```
 
+### Sample Output
+```
+Mac:build liamgreubel$ ./sim_runner 
+Before step:
+Vehicle1 at (0, 0)
+Vehicle2 at (5, 5)
+
+After step:
+Vehicle1 at (0.1, 0)
+Vehicle2 at (5.0224, 5)
+```
+
 ### High-Level Architecture
 #### Core Modules Currently Implemented
 
