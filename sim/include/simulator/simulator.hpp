@@ -1,6 +1,7 @@
 #include <vector>
+#include <memory>
 
-#include "map.hpp"
+#include "simulator/map.hpp"
 
 #ifndef SIMULATOR_HPP
 #define SIMULATOR_HPP
@@ -9,13 +10,14 @@ class Simulator
 {
 public:
     Simulator(Map& map) : map_(map) {}
-    void step(double dt);
-    void updateActors();
-    void addActor(Actor* new_actor);
+    void addActor(double x, double y, double vx, double vy, double yaw_deg, const std::string& name, Polygon polygon);
+    void step(const double dt);
+    static void updateActors();
+
 
 private:
     Map& map_;
-
+    std::vector<std::unique_ptr<Actor>> actors_;
 };
 
 #endif /* SIMULATOR_HPP */

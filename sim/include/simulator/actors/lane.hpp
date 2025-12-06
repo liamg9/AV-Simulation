@@ -1,13 +1,13 @@
-#include "actor.hpp"
+#include "simulator/actors/actor.hpp"
 
 #ifndef LANE_HPP
 #define LANE_HPP
 
-class Lane : Actor
+class Lane : public Actor
 {
 public:
-    Lane(double x, double y, double yaw, const std::string& name, const Polygon& polygon)
-        : Actor(x, y, yaw, name, polygon) {}
+    Lane(double x, double y, double vx, double vy, double yaw, const std::string& name, Polygon polygon)
+        : Actor(x, y, vx, vy, yaw, name, std::move(polygon)) {}
 
 };
 
