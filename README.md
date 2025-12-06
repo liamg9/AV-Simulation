@@ -15,15 +15,14 @@ The simulator updates a collection of dynamic and static actors (vehicles, obsta
     * Vector2D for basic geometry ops
     * Polygon for local-frame vertices, rotation, and world-frame transforms
 * Simulator Core
-    * Time-stepped simulator (step(dt))
+    * Time-stepped simulator
     * Kinematic updates for all dynamic actors
 * Map Container
     * Read-only registry of all actors for future UI/frontend consumption
 
 ## Project Goals
 
-This project is intended to be a foundational simulation environment similar in spirit to small components of AV simulators in industry.
-The emphasis is on clarity, correct architecture, and incremental feature growth.
+I'm making this project to practice C++ within AV context. I'm emphasizing writing clean, modular code where I can build more features on top of while maintaining a focused scope (estimating 6 weeks to complete)
 
 ## Build Instructions
 ### Prerequisites
