@@ -1,4 +1,5 @@
 #include "utils/polygon.hpp"
+#include <algorithm>
 #include <cmath>
 
 std::vector<Vector2D> Polygon::getTranslated(double origin_x, double origin_y, double yaw_deg) const
@@ -22,4 +23,32 @@ std::vector<Vector2D> Polygon::getTranslated(double origin_x, double origin_y, d
     }
 
     return moved_vertices;
+}
+
+std::vector<Vector2D> Polygon::getAxes() const
+{
+    std::vector<Vector2D> axes;
+    for (size_t i = 0; i < vertices_.size(); i++)
+    {
+        size_t next = (i + 1) % vertices_.size();
+        Vector2D edge = vertices_[next] - vertices_[i];
+        Vector2D axis = edge.perp();
+        axis.normalize();
+        axes.push_back(axis);
+    }
+    return axes;
+}
+
+Vector2D Polygon::getProjection(const Vector2D& axis) const
+{
+    double min = axis.dot(vertices_[0]);
+    double max = min;
+    for(auto& vertex : vertices_)
+    {
+        double projection = axis.dot(vertex);
+        min = std::min(projection, min);
+        max = std::max(projection, max);
+    }
+    Vector2D proj(min, max);
+    return proj;
 }
