@@ -2,12 +2,11 @@
 #include <algorithm>
 #include <cmath>
 
-std::vector<Vector2D> Polygon::getTranslated(double origin_x, double origin_y, double yaw_deg) const
+std::vector<Vector2D> Polygon::getTranslated(double origin_x, double origin_y, double yaw_rad) const
 {
     std::vector<Vector2D> moved_vertices;
     moved_vertices.reserve(vertices_.size());
 
-    double yaw_rad = yaw_deg * M_PI / 180.0;    //convert to radians for std::sin and std::cos
     double cos_yaw = std::cos(yaw_rad);
     double sin_yaw = std::sin(yaw_rad);
 

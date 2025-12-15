@@ -6,8 +6,8 @@
 class Lane : public Actor
 {
 public:
-    Lane(double x, double y, double vx, double vy, double yaw, const std::string& name, Polygon polygon)
-        : Actor(x, y, vx, vy, yaw, name, std::move(polygon)) {}
+    Lane(State& state, const std::string& name, Polygon polygon)
+        : Actor(state, name, std::move(polygon)) {}
 
 };
 

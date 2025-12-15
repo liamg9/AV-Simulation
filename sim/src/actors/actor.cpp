@@ -1,14 +1,23 @@
 #include "simulator/actors/actor.hpp"
 
 
-void Actor::rotate(double delta_yaw)
+void Actor::setState(State& d_state)
 {
-    yaw_ = normalizeAngle(delta_yaw + yaw_);
+    state_.x += d_state.x;
+    state_.y += d_state.y;
+    state_.v += d_state.v;
+    state_.yaw += d_state.yaw;
+    state_.steering += d_state.steering;
 }
 
-double Actor::normalizeAngle(double yaw_deg)
+void Actor::rotate(double delta_yaw)
 {
-    while (yaw_deg > 180.0) yaw_deg -= 360.0;
-    while (yaw_deg < -180.0) yaw_deg += 360.0;
-    return yaw_deg;
+    state_.yaw = normalizeAngle(delta_yaw + state_.yaw);
+}
+
+double Actor::normalizeAngle(double yaw_rad)
+{
+    while (yaw_rad > M_PI) yaw_rad -= 2 * M_PI;
+    while (yaw_rad < M_PI) yaw_rad += 2 * M_PI;
+    return yaw_rad;
 }

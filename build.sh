@@ -1,6 +1,6 @@
-cd ~/Desktop/AV-Simulation/sim
-rm -rf build
-mkdir build
-cd build
-cmake ..
-make -j
+cd ~/Desktop/AV-Simulation
+rm -rf sim/build
+mkdir -p sim/build
+cd sim/build
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+cmake --build .

@@ -6,8 +6,8 @@
 class Obstacle : public Actor
 {
 public:
-    Obstacle(double x, double y, double vx, double vy, double yaw, const std::string& name, Polygon polygon)
-        : Actor(x, y, vx, vy, yaw, name, std::move(polygon)) {}
+    Obstacle(double x, double y, double v, double yaw, const std::string& name, Polygon polygon)
+        : Actor(x, y, v, yaw, name, std::move(polygon)) {}
 
 };
 
