@@ -46,14 +46,24 @@ make -j
 ### Sample Output
 ```
 Mac:build liamgreubel$ ./sim_runner 
-Before step:
 Vehicle1 at (0, 0)
-Vehicle2 at (5, 5)
-
-After step:
+----positions at time = 0----
 Vehicle1 at (0.1, 0)
-Vehicle2 at (5.0224, 5)
+----positions at time = 0.1----
+Vehicle1 at (0.19998, 0.00199987)
+----positions at time = 0.2----
+.
+.
+.
+Vehicle1 at (5.00512, 4.6048)
+----positions at time = 9.7----
+Vehicle1 at (5.00512, 4.6048)
+----positions at time = 9.8----
+Vehicle1 at (5.00512, 4.6048)
+----positions at time = 9.9----
 ```
+
+![alt text](image.png)
 
 ### High-Level Architecture
 #### Core Modules Currently Implemented
@@ -66,15 +76,15 @@ Vehicle2 at (5.0224, 5)
 
 * Simulator: owns actors, updates them, and steps simulation forward
 
-#### Roadmap (Future planned work not yet implemented)
-
 * Collision Detection
 
 * Polygon intersection and bounding-box prechecks
 
-* Vehicle Motion Model (ex: bicycle model)
+* Vehicle Motion Model (bicycle model)
 
-* Pure pursuit or waypoint-tracking controller
+* Pure pursuit or waypoint-tracking controller (in progress)
+
+#### Roadmap (Future planned work not yet implemented)
 
 * Map & Lane Loading from JSON
 

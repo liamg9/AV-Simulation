@@ -15,6 +15,7 @@ Makefile
 *.exe
 *.out
 *.log
+*.cmake
 
 # ==========================
 # Python / FastAPI
